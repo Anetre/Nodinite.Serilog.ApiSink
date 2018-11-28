@@ -46,7 +46,7 @@ And putting the following into your appsettings.json:
         "Name": "NodiniteApiSink",
         "Args": {
           "NodiniteApiUrl": "",
-          "settings": {
+          "Settings": {
             "LogAgentValueId": 503,
             "EndPointName": "Nodinite.Serilog.Sink.Tests",
             "EndPointUri": "Nodinite.Serilog.Sink.Tests.Serilog",

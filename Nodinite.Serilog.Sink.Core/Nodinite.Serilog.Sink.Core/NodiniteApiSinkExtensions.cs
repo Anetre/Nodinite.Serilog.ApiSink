@@ -11,14 +11,14 @@ namespace Nodinite.Serilog.Sink.Core
         public static LoggerConfiguration NodiniteApiSink(
                   this LoggerSinkConfiguration loggerConfiguration,
                   string NodiniteApiUrl, 
-                  NodiniteLogEventSettings settings,
+                  NodiniteLogEventSettings Settings,
                   IFormatProvider formatProvider = null,
                   LogEventLevel restrictedToMinimumLevel = LevelAlias.Minimum)
         {
             if (loggerConfiguration == null)
                 throw new ArgumentNullException("loggerConfiguration");
 
-            return loggerConfiguration.Sink(new NodiniteApiSink(NodiniteApiUrl, settings, formatProvider), restrictedToMinimumLevel);
+            return loggerConfiguration.Sink(new NodiniteApiSink(NodiniteApiUrl, Settings, formatProvider), restrictedToMinimumLevel);
         }
     }
 }

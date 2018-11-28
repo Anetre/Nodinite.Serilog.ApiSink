@@ -15,15 +15,15 @@ namespace Nodinite.Serilog.Sink.Core.Tests
         public void ReadSettingsFromAppSettingsTest()
         {
             // todo: implement moq
-            //var configuration = new ConfigurationBuilder()
-            //    .AddJsonFile("appsettings.json")
-            //    .Build();
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
 
-            //Logger log = new LoggerConfiguration()
-            //    .ReadFrom.Configuration(configuration)
-            //    .CreateLogger();
+            Logger log = new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+                .CreateLogger();
 
-            //log.Information("Hello World");
+            log.Information("Hello World");
         }
     }
 }
