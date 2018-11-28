@@ -23,6 +23,20 @@ Events that are logged to MSMQ and Azure Service Bus can then be picked up and l
 
 ### Appsettings.json
 
+Using the following code to initialize the logger in your application:
+
+```csharp
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+Logger log = new LoggerConfiguration()
+    .ReadFrom.Configuration(configuration)
+    .CreateLogger();
+```
+
+And putting the following into your appsettings.json:
+
 ```json
 {
   "Serilog": {
