@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Nodinite</Authors>
+    <Company>Nodinite</Company>
+    <Product>Nodinite</Product>
+    <Description>Serilog sinks for Nodinite</Description>
+    <Copyright>Nodinite 2018</Copyright>
+    <PackageLicenseUrl />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
