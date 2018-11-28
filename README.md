@@ -1,0 +1,1 @@
+# Nodinite.Serilog.Sink.Core
