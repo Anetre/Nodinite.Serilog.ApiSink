@@ -8,7 +8,7 @@
     <Description>Serilog sinks for Nodinite</Description>
     <Copyright>Nodinite 2018</Copyright>
     <PackageLicenseUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core/blob/master/LICENSE</PackageLicenseUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core</RepositoryUrl>
     <PackageTags>Nodinite,Serilog,Logging,Integration</PackageTags>
