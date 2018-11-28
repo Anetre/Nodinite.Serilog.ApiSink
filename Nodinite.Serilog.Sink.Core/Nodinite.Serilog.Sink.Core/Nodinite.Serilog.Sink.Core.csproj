@@ -3,12 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <Authors>Nodinite</Authors>
-    <Company>Nodinite</Company>
+    <Company>Nodinite (https://nodinite.com)</Company>
     <Product>Nodinite</Product>
     <Description>Serilog sinks for Nodinite</Description>
     <Copyright>Nodinite 2018</Copyright>
-    <PackageLicenseUrl />
+    <PackageLicenseUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core</RepositoryUrl>
+    <PackageTags>Nodinite,Serilog,Logging,Integration</PackageTags>
+    <PackageReleaseNotes>Release of Serilog sink to log to Nodinite API.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
