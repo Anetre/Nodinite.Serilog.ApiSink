@@ -23,7 +23,8 @@ Events that are logged to MSMQ and Azure Service Bus can then be picked up and l
 
 ### Appsettings.json
 
-`{
+```json
+{
   "Serilog": {
     "Using": [ "Nodinite.Serilog.Sink.Core" ],
     "WriteTo": [
@@ -48,4 +49,5 @@ Events that are logged to MSMQ and Azure Service Bus can then be picked up and l
       }
     ]
   }
-}`
+}
+```
