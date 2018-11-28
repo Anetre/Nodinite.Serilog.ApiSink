@@ -19,12 +19,6 @@ artifacts:
  - path: '\Nodinite.Serilog.Sink.Core\Nodinite.Serilog.Sink.Core\bin\Debug\'
    name: Sink
 clone_depth: 1
-test_script:
-  # restore packages for our unit tests
-  - cmd: dotnet restore ./Nodinite.Serilog.Sink.Core/Nodinite.Serilog.Sink.Core.Tests/Nodinite.Serilog.Sink.Core.Tests.csproj --verbosity m
-  # run the unit tests (requires changing into the test directory)
-  - cmd: cd tests
-  - cmd: dotnet xunit
 on_finish :
   # any cleanup in here
 deploy: off
