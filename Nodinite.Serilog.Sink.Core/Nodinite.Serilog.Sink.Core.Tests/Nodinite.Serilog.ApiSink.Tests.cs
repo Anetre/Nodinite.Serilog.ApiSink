@@ -55,29 +55,29 @@ namespace Nodinite.Serilog.Sink.Core.Tests
         [TestMethod]
         public void LogContextProperties()
         {
-            //var nodiniteApiUrl = "{Your Nodinite API Url}";
-            //var settings = new NodiniteLogEventSettings()
-            //{
-            //    LogAgentValueId = 503,
-            //    EndPointDirection = 0,
-            //    EndPointTypeId = 0,
-            //    EndPointUri = "Nodinite.Serilog.Sink.Tests.Serilog",
-            //    EndPointName = "Nodinite.Serilog.Sink.Tests",
-            //    OriginalMessageTypeName = "Serilog.LogEvent",
-            //    ProcessingUser = "NODINITE",
-            //    ProcessName = "Nodinite.Serilog.Sink.Tests",
-            //    ProcessingMachineName = "NODINITE-DEV",
-            //    ProcessingModuleName = "DOTNETCORE.TESTS",
-            //    ProcessingModuleType = "DOTNETCORE.TESTPROJECT"
-            //};
+            var nodiniteApiUrl = "http://im.demo.integrationsoftware.se/LogAPI/api/";
+            var settings = new NodiniteLogEventSettings()
+            {
+                LogAgentValueId = 503,
+                EndPointDirection = 0,
+                EndPointTypeId = 0,
+                EndPointUri = "Nodinite.Serilog.Sink.Tests.Serilog",
+                EndPointName = "Nodinite.Serilog.Sink.Tests",
+                OriginalMessageTypeName = "Serilog.LogEvent",
+                ProcessingUser = "NODINITE",
+                ProcessName = "Nodinite.Serilog.Sink.Tests",
+                ProcessingMachineName = "NODINITE-DEV",
+                ProcessingModuleName = "DOTNETCORE.TESTS",
+                ProcessingModuleType = "DOTNETCORE.TESTPROJECT"
+            };
 
-            //ILogger log = new LoggerConfiguration()
-            //    .WriteTo.NodiniteApiSink(nodiniteApiUrl, settings)
-            //    .CreateLogger()
-            //    .ForContext("CorrelationId", Guid.NewGuid())
-            //    .ForContext("ServiceName", "RomaTest");
+            ILogger log = new LoggerConfiguration()
+                .WriteTo.NodiniteApiSink(nodiniteApiUrl, settings)
+                .CreateLogger()
+                .ForContext("CorrelationId", Guid.NewGuid())
+                .ForContext("CustomerId", 12);
 
-            //log.Information("Test");
+            log.Information($"Customer '12' imported");
         }
     }
 }

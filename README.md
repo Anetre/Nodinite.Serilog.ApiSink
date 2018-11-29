@@ -36,7 +36,7 @@ Install-Package Nodinite.Serilog.Sink.Core
 
 [**Nodinite**](https://nodinite.com) requires some settings to be configured in order for events to be logged. Below you can see all settings that need to be configured.
 
-|Field|Value|Comment|
+|Field|Example Value|Comment|
 |---|---|---| 
 |LogAgentValueId|503|Who ([Log Agents](https://documentation.nodinite.com/Documentation/WebClient?doc=/5.%20Administration/1.%20Log/4.%20Log%20Agents/Log%20Agents)) sent the data|
 |EndPointName|"Nodinite.Serilog.Sink.Tests"|Name of [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
@@ -141,11 +141,11 @@ ILogger log = new LoggerConfiguration()
     .ForContext("CorrelationId", Guid.NewGuid())
     .ForContext("CustomerId", 12);
 
-log.Information("Customer 12 has been imported.");
+log.Information("Customer '12' has been imported.");
 ```
 
 The Serilog sink will automatically loop over all context properties you have defined in your code and log them as part of your event to [**Nodinite**](https://nodinite.com). 
 
-Example image:
+Example:
 
 ![nodinite.serilog.sink.core.context.properties](artifacts/nodinite.serilog.sink.core.context.properties.png)
