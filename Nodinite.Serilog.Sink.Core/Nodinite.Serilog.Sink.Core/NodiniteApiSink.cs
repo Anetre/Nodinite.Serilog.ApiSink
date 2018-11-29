@@ -20,6 +20,10 @@ namespace Nodinite.Serilog.Sink.Core
             _apiUrl = apiUrl;
             _settings = settings;
             _formatProvider = formatProvider;
+
+            // validate settings
+            if (!_settings.LogAgentValueId.HasValue)
+                throw new ArgumentNullException("LogAgentValueId must not be null");
         }
 
         public void Emit(LogEvent logEvent)
@@ -28,7 +32,7 @@ namespace Nodinite.Serilog.Sink.Core
 
             var nEvent = new NodiniteLogEvent();
 
-            nEvent.LogAgentValueId = _settings.LogAgentValueId.HasValue ? _settings.LogAgentValueId.Value : 10000;
+            nEvent.LogAgentValueId = _settings.LogAgentValueId.Value;
             nEvent.EndPointName = _settings.EndPointName;
             nEvent.EndPointUri = _settings.EndPointUri;
             nEvent.EndPointDirection = _settings.EndPointDirection.HasValue ? _settings.EndPointDirection.Value : 0;
@@ -45,22 +49,10 @@ namespace Nodinite.Serilog.Sink.Core
             nEvent.ProcessingModuleName = _settings.ProcessingModuleName;
             nEvent.ProcessingModuleType = _settings.ProcessingModuleType;
 
-            try
+            nEvent.Context = new System.Collections.Generic.Dictionary<string, string>();
+            foreach (var property in logEvent.Properties)
             {
-                nEvent.Context = new
-                {
-                    CorrelationId = Guid.Parse(logEvent.Properties["correlationId"].ToString())
-                };
-            }
-            catch { }
-
-            try
-            {
-                nEvent.ServiceInstanceActivityId = Guid.Parse(logEvent.Properties["serviceInstanceActivityId"].ToString());
-            }
-            catch
-            {
-                nEvent.ServiceInstanceActivityId = Guid.NewGuid();
+                nEvent.Context.Add(property.Key, property.Value.ToString().Replace("\"", ""));
             }
 
             nEvent.ProcessingTime = 0;
@@ -95,7 +87,6 @@ namespace Nodinite.Serilog.Sink.Core
                 var uri = _apiUrl + "LogEvent/LogEvent";
 
                 HttpResponseMessage response;
-
 
                 byte[] byteData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(logEvent));
 

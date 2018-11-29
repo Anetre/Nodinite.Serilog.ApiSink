@@ -13,6 +13,7 @@
     <RepositoryUrl>https://github.com/Nodinite/Nodinite.Serilog.Sink.Core</RepositoryUrl>
     <PackageTags>Nodinite,Serilog,Logging,Integration</PackageTags>
     <PackageReleaseNotes>Release of Serilog sink to log to Nodinite API.</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -6,6 +6,16 @@ namespace Nodinite.Serilog.Sink.Core.models
 {
     public class NodiniteLogEvent
     {
+        public NodiniteLogEvent()
+        {
+
+        }
+
+        public NodiniteLogEvent(int logAgentValueId)
+        {
+            LogAgentValueId = logAgentValueId;
+        }
+
         public int LogAgentValueId { get; set; }
         public string EndPointName { get; set; }
         public string EndPointUri { get; set; }
@@ -27,6 +37,6 @@ namespace Nodinite.Serilog.Sink.Core.models
         public Guid ServiceInstanceActivityId { get; set; }
         public int ProcessingTime { get; set; }
         public string Body { get; set; }
-        public object Context { get; set; }
+        public Dictionary<string, string> Context { get; set; }
     }
 }
