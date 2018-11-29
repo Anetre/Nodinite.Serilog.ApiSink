@@ -4,24 +4,65 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a8r7xt17s7x0vxca?svg=true)](https://ci.appveyor.com/project/syron/nodinite-serilog-sink-core)
 
-A Serilog sink that writes log events to **Nodinite**. This project is built with .NET Core 2.0.
+A [Serilog](https://www.nuget.org/packages/Serilog/2.7.2-dev-01033) sink that writes log events to [**Nodinite**](https://nodinite.com). This project is built with .NET Core 2.0.
 
-The current version supports logging **Nodinite** Log Events using
+The current version supports logging [**Nodinite**](https://nodinite.com) Log Events using
 
-* Log API
+* [Log API](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Overview)
 
-Upcoming versions support logging **Nodinite** Log Events using
+Upcoming versions support logging [**Nodinite**](https://nodinite.com) Log Events using
 
 * MSMQ 
 * Azure Service Bus
+* RabbitMQ
+* ActiveMQ
 
-Events that are logged to MSMQ and Azure Service Bus can then be picked up and logged to **Nodinite** using our [Pickup Events Service](https://documentation.nodinite.com/Documentation/LoggingAndMonitoring/Pickup%20LogEvents%20Service?doc=/Overview).
+Events that are logged to one of the messaging systems above can then be picked up and logged to [**Nodinite**](https://nodinite.com) using our [Pickup Events Service](https://documentation.nodinite.com/Documentation/LoggingAndMonitoring/Pickup%20LogEvents%20Service?doc=/Overview).
 
 ## Get Started
 
-## Configuration
+### Install Nodinite.Serilog.Sink.Core Nuget Package
 
-### Appsettings.json
+Start by installing the NuGet package [Nodinite.Serilog.Sink.Core](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core/).
+
+```
+Install-Package Nodinite.Serilog.Sink.Core
+```
+
+### Configuration
+
+#### Using code
+
+```csharp
+var nodiniteApiUrl = "{Your Nodinite API Url";
+var settings = new NodiniteLogEventSettings()
+{
+    LogAgentValueId = 503,
+    EndPointDirection = 0,
+    EndPointTypeId = 0,
+    EndPointUri = "Nodinite.Serilog.Sink.Tests.Serilog",
+    EndPointName = "Nodinite.Serilog.Sink.Tests",
+    OriginalMessageTypeName = "Serilog.LogEvent",
+    ProcessingUser = "NODINITE",
+    ProcessName = "Nodinite.Serilog.Sink.Tests",
+    ProcessingMachineName = "NODINITE-DEV",
+    ProcessingModuleName = "DOTNETCORE.TESTS",
+    ProcessingModuleType = "DOTNETCORE.TESTPROJECT"
+};
+
+Logger log = new LoggerConfiguration()
+    .WriteTo.NodiniteApiSink(nodiniteApiUrl, settings)
+    .CreateLogger();
+```
+
+#### Using Appsettings.json (Preferred)
+
+The following nuget packages need to be installed
+
+* [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/2.2.0-preview3-35497)
+* [Microsoft.Extensions.Configuration.Json](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/2.2.0-preview3-35497)
+* Nodinite.Serilog.Sink.Core
+* [Serilog.Settings.Configuration](https://www.nuget.org/packages/Serilog.Settings.Configuration/)
 
 Using the following code to initialize the logger in your application:
 
