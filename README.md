@@ -34,8 +34,14 @@ Install-Package Nodinite.Serilog.Sink.Core
 
 #### Using code
 
+Besides [Serilog](https://www.nuget.org/packages/serilog/), the following nuget packages need to be installed
+
+* [Nodinite.Serilog.Sink.Core](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core)
+
+Using the following code below you can start logging events to [**Nodinite**](https://nodinite.com).
+
 ```csharp
-var nodiniteApiUrl = "{Your Nodinite API Url";
+var nodiniteApiUrl = "{Your Nodinite Log API Url";
 var settings = new NodiniteLogEventSettings()
 {
     LogAgentValueId = 503,
@@ -58,11 +64,11 @@ Logger log = new LoggerConfiguration()
 
 #### Using Appsettings.json (Preferred)
 
-The following nuget packages need to be installed
+Besides [Serilog](https://www.nuget.org/packages/serilog/), the following nuget packages need to be installed
 
 * [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/2.2.0-preview3-35497)
 * [Microsoft.Extensions.Configuration.Json](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/2.2.0-preview3-35497)
-* Nodinite.Serilog.Sink.Core
+* [Nodinite.Serilog.Sink.Core](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core)
 * [Serilog.Settings.Configuration](https://www.nuget.org/packages/Serilog.Settings.Configuration/)
 
 Using the following code to initialize the logger in your application:
