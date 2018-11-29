@@ -34,6 +34,22 @@ Install-Package Nodinite.Serilog.Sink.Core
 
 ### Configuration
 
+[**Nodinite**](https://nodinite.com) requires some settings to be configured in order for events to be logged. Below you can see all settings that need to be configured.
+
+|Field|Value|Comment|
+|---|---|---| 
+|LogAgentValueId|503|Who ([Log Agents](https://documentation.nodinite.com/Documentation/WebClient?doc=/5.%20Administration/1.%20Log/4.%20Log%20Agents/Log%20Agents)) sent the data|
+|EndPointName|"Nodinite.Serilog.Sink.Tests"|Name of [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
+|EndPointUri|"Nodinite.Serilog.Sink.Tests.Serilog"|URI for [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport |
+|[EndPointDirection](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Getting%20started/Log%20Event/Endpoint%20Directions)|0|Direction for [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
+|[EndPointTypeId](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Getting%20started/Log%20Event/Endpoint%20Types)|0|Type of [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
+|OriginalMessageTypeName|"Serilog.LogEvent"|[Message Type Name](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Message%20Types/Overview)|
+|ProcessingUser|"Nodinite"|Log Identity|
+|ProcessName|"My customer import process"|Name of process|
+|ProcessingMachineName|"localhost"|Name of server where log event originated|
+|ProcessingModuleName|"INT101-HelloHappyCustomers-Application"|Name of module|
+|ProcessingModuleType|"FileImport"|Type of module, exe, dll, service|
+
 #### Using code
 
 Besides [Serilog](https://www.nuget.org/packages/serilog/), the following nuget packages need to be installed
@@ -128,7 +144,7 @@ ILogger log = new LoggerConfiguration()
 log.Information("Customer 12 has been imported.");
 ```
 
-The Serilog sink will automatically loop over all context properties you have defined in your code and log them as part of your event to Nodinite. 
+The Serilog sink will automatically loop over all context properties you have defined in your code and log them as part of your event to [**Nodinite**](https://nodinite.com). 
 
 Example image:
 
