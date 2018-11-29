@@ -3,6 +3,7 @@
 # Nodinite.Serilog.Sink.Core
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a8r7xt17s7x0vxca?svg=true)](https://ci.appveyor.com/project/syron/nodinite-serilog-sink-core)
+[![Nuget](https://img.shields.io/badge/nuget-1.0.2-orange.svg)](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core)
 
 A [Serilog](https://www.nuget.org/packages/Serilog/2.7.2-dev-01033) sink that writes log events to [**Nodinite**](https://nodinite.com). This project is built with .NET Core 2.0.
 
