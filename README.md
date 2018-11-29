@@ -7,6 +7,8 @@
 
 A [Serilog](https://www.nuget.org/packages/Serilog/2.7.2-dev-01033) sink that writes log events to [**Nodinite**](https://nodinite.com). This project is built with .NET Core 2.0.
 
+![nodinite.serilog.sink.core.event.logging](artifacts/nodinite.serilog.sink.core.event.logging.png)
+
 The current version supports logging [**Nodinite**](https://nodinite.com) Log Events using
 
 * [Log API](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Overview)
@@ -113,3 +115,21 @@ And putting the following into your appsettings.json:
   }
 }
 ```
+
+### Logging Context Properties
+
+```csharp
+ILogger log = new LoggerConfiguration()
+    .WriteTo.NodiniteApiSink(nodiniteApiUrl, settings)
+    .CreateLogger()
+    .ForContext("CorrelationId", Guid.NewGuid())
+    .ForContext("CustomerId", 12);
+
+log.Information("Customer 12 has been imported.");
+```
+
+The Serilog sink will automatically loop over all context properties you have defined in your code and log them as part of your event to Nodinite. 
+
+Example image:
+
+![nodinite.serilog.sink.core.context.properties](artifacts/nodinite.serilog.sink.core.context.properties.png)
