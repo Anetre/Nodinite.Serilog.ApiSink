@@ -9,15 +9,17 @@ using System.Text;
 
 namespace Nodinite.Serilog.Sink.Core
 {
-    public class NodiniteApiSink : ILogEventSink, INodiniteSink
+    public class NodiniteMsmqSink : ILogEventSink, INodiniteSink
     {
         private readonly IFormatProvider _formatProvider;
         private readonly string _apiUrl;
         private readonly NodiniteLogEventSettings _settings;
+        private readonly NodiniteMsmqSettings _msmqSettings;
 
-        public NodiniteApiSink(string apiUrl, NodiniteLogEventSettings settings, IFormatProvider formatProvider)
+        public NodiniteMsmqSink(string apiUrl, NodiniteMsmqSettings msmqSettings, NodiniteLogEventSettings settings, IFormatProvider formatProvider)
         {
             _apiUrl = apiUrl;
+            _msmqSettings = msmqSettings;
             _settings = settings;
             _formatProvider = formatProvider;
 

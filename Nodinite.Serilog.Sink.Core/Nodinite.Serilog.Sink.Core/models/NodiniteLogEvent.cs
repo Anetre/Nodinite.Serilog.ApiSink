@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog.Events;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,54 @@ namespace Nodinite.Serilog.Sink.Core.models
         public NodiniteLogEvent(int logAgentValueId)
         {
             LogAgentValueId = logAgentValueId;
+        }
+
+        public NodiniteLogEvent(string message, LogEvent logEvent, NodiniteLogEventSettings settings)
+        {
+            LogAgentValueId = settings.LogAgentValueId.Value;
+            EndPointName = settings.EndPointName;
+            EndPointUri = settings.EndPointUri;
+            EndPointDirection = settings.EndPointDirection.HasValue ? settings.EndPointDirection.Value : 0;
+            EndPointTypeId = settings.EndPointTypeId.HasValue ? settings.EndPointTypeId.Value : 0;
+            OriginalMessageTypeName = string.IsNullOrWhiteSpace(settings.OriginalMessageTypeName) ? "Nodinite.Serilog.LogEvent" : settings.OriginalMessageTypeName;
+            LogDateTime = DateTimeOffset.UtcNow;
+            ProcessingUser = settings.ProcessingUser;
+            SequenceNo = 0;
+            EventNumber = 0;
+            ApplicationInterchangeId = Guid.NewGuid().ToString();
+            LocalInterchangeId = Guid.NewGuid();
+            ProcessName = settings.ProcessName;
+            ProcessingMachineName = settings.ProcessingMachineName;
+            ProcessingModuleName = settings.ProcessingModuleName;
+            ProcessingModuleType = settings.ProcessingModuleType;
+
+            Context = new System.Collections.Generic.Dictionary<string, string>();
+            foreach (var property in logEvent.Properties)
+            {
+                Context.Add(property.Key, property.Value.ToString().Replace("\"", ""));
+            }
+
+            ProcessingTime = 0;
+            LogText = message;
+
+            switch (logEvent.Level)
+            {
+                case LogEventLevel.Error:
+                    LogStatus = -1;
+                    break;
+                case LogEventLevel.Fatal:
+                    LogStatus = -2;
+                    break;
+                case LogEventLevel.Warning:
+                    LogStatus = 1;
+                    break;
+                case LogEventLevel.Debug:
+                case LogEventLevel.Information:
+                case LogEventLevel.Verbose:
+                default:
+                    LogStatus = 0;
+                    break;
+            }
         }
 
         public int LogAgentValueId { get; set; }

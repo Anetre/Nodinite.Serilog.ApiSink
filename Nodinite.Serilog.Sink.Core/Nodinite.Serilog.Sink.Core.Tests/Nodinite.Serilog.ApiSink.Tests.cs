@@ -55,7 +55,7 @@ namespace Nodinite.Serilog.Sink.Core.Tests
         [TestMethod]
         public void LogContextProperties()
         {
-            var nodiniteApiUrl = "{Your Nodinite API Url}";
+            var nodiniteApiUrl = "http://im.demo.integrationsoftware.se/LogAPI/api/";
             var settings = new NodiniteLogEventSettings()
             {
                 LogAgentValueId = 503,
