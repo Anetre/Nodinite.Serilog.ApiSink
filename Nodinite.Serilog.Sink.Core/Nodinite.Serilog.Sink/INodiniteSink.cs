@@ -1,9 +1,6 @@
-﻿using Nodinite.Serilog.Sink.Core.models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Nodinite.Serilog.Sink.models;
 
-namespace Nodinite.Serilog.Sink.Core
+namespace Nodinite.Serilog.Sink
 {
     interface INodiniteSink
     {

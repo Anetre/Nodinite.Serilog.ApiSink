@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Nodinite.Serilog.Sink.Core.models;
+using Nodinite.Serilog.Sink.models;
 using Serilog.Core;
 using Serilog.Events;
 using System;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace Nodinite.Serilog.Sink.Core
+namespace Nodinite.Serilog.Sink
 {
     public class NodiniteApiSink : ILogEventSink, INodiniteSink
     {

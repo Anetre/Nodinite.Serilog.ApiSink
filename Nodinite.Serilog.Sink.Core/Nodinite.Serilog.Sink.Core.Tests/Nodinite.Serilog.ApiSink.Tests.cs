@@ -1,12 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Serilog;
-using Nodinite.Serilog.Sink.Core;
-using Serilog.Events;
 using Serilog.Core;
-using Serilog.Configuration;
-using Microsoft.Extensions.Configuration;
-using Nodinite.Serilog.Sink.Core.models;
 using System;
+using Nodinite.Serilog.Sink.models;
 
 namespace Nodinite.Serilog.Sink.Core.Tests
 {
