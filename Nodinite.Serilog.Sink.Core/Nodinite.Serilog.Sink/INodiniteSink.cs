@@ -1,6 +1,6 @@
-﻿using Nodinite.Serilog.Sink.models;
+﻿using Nodinite.Serilog.ApiSink.models;
 
-namespace Nodinite.Serilog.Sink
+namespace Nodinite.Serilog.ApiSink
 {
     interface INodiniteSink
     {

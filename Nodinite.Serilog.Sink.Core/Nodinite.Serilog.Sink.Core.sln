@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.Sink.Core.Tests", "Nodinite.Serilog.Sink.Core.Tests\Nodinite.Serilog.Sink.Core.Tests.csproj", "{45AF7276-273F-4F48-8747-5B3D13EB2E00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.Sink.Tests", "Nodinite.Serilog.Sink.Core.Tests\Nodinite.Serilog.Sink.Tests.csproj", "{45AF7276-273F-4F48-8747-5B3D13EB2E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.Sink", "Nodinite.Serilog.Sink\Nodinite.Serilog.Sink.csproj", "{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.ApiSink", "Nodinite.Serilog.Sink\Nodinite.Serilog.ApiSink.csproj", "{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

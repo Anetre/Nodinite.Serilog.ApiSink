@@ -1,10 +1,10 @@
-﻿using Nodinite.Serilog.Sink.models;
+﻿using Nodinite.Serilog.ApiSink.models;
 using Serilog;
 using Serilog.Configuration;
 using Serilog.Events;
 using System;
 
-namespace Nodinite.Serilog.Sink
+namespace Nodinite.Serilog.ApiSink
 {
     public static class NodiniteApiSinkExtensions
     {

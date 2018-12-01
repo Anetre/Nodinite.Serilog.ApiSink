@@ -2,9 +2,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Serilog;
 using Serilog.Core;
 using System;
-using Nodinite.Serilog.Sink.models;
+using Nodinite.Serilog.ApiSink;
+using Nodinite.Serilog.ApiSink.models;
 
-namespace Nodinite.Serilog.Sink.Core.Tests
+namespace Nodinite.Serilog.Sink.Tests
 {
     [TestClass]
     public class UnitTest1
