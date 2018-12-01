@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nodinite.Serilog.Sink\Nodinite.Serilog.ApiSink.csproj" />
+    <ProjectReference Include="..\Nodinite.Serilog.ApiSink\Nodinite.Serilog.ApiSink.csproj" />
   </ItemGroup>
 
   <ItemGroup>
