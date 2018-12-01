@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.Sink.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.Sink.Core.Tests", "Nodinite.Serilog.Sink.Core.Tests\Nodinite.Serilog.Sink.Core.Tests.csproj", "{45AF7276-273F-4F48-8747-5B3D13EB2E00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodinite.Serilog.Sink", "Nodinite.Serilog.Sink\Nodinite.Serilog.Sink.csproj", "{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{45AF7276-273F-4F48-8747-5B3D13EB2E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45AF7276-273F-4F48-8747-5B3D13EB2E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45AF7276-273F-4F48-8747-5B3D13EB2E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A50CE11-5C61-4AE7-95D4-7A84224CAB15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
