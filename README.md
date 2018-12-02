@@ -3,34 +3,23 @@
 # Nodinite.Serilog.ApiSink
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a8r7xt17s7x0vxca?svg=true)](https://ci.appveyor.com/project/syron/nodinite-serilog-sink-core)
-[![NuGet Version](http://img.shields.io/nuget/v/Nodinite.Serilog.Sink.Core.svg?style=flat)](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core/)
+[![NuGet Version](http://img.shields.io/nuget/v/Nodinite.Serilog.ApiSink.svg?style=flat)](https://www.nuget.org/packages/Nodinite.Serilog.ApiSink/)
 
 
-A [Serilog](https://www.nuget.org/packages/Serilog/2.7.2-dev-01033) sink that writes log events to [**Nodinite**](https://nodinite.com). This project is built with .NET Core 2.0.
+A [Serilog](https://www.nuget.org/packages/Serilog/2.7.2-dev-01033) sink that writes log events to [**Nodinite**](https://nodinite.com)'s Log API. 
+
+This project is built with .NET Standard 2.0.
 
 ![nodinite.serilog.sink.core.event.logging](artifacts/nodinite.serilog.sink.core.event.logging.png)
 
-The current version supports logging [**Nodinite**](https://nodinite.com) Log Events using
-
-* [Log API](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Overview)
-
-Upcoming versions support logging [**Nodinite**](https://nodinite.com) Log Events using
-
-* MSMQ 
-* Azure Service Bus
-* RabbitMQ
-* ActiveMQ
-
-Events that are logged to one of the messaging systems above can then be picked up and logged to [**Nodinite**](https://nodinite.com) using our [Pickup Events Service](https://documentation.nodinite.com/Documentation/LoggingAndMonitoring/Pickup%20LogEvents%20Service?doc=/Overview).
-
 ## Get Started
 
-### Install Nodinite.Serilog.Sink.Core Nuget Package
+### Install Nodinite.Serilog.ApiSink Nuget Package
 
 Start by installing the NuGet package [Nodinite.Serilog.Sink.Core](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core/).
 
 ```
-Install-Package Nodinite.Serilog.Sink.Core
+Install-Package Nodinite.Serilog.ApiSink
 ```
 
 ### Configuration
@@ -40,8 +29,8 @@ Install-Package Nodinite.Serilog.Sink.Core
 |Field|Example Value|Comment|
 |---|---|---| 
 |LogAgentValueId|503|Who ([Log Agents](https://documentation.nodinite.com/Documentation/WebClient?doc=/5.%20Administration/1.%20Log/4.%20Log%20Agents/Log%20Agents)) sent the data|
-|EndPointName|"Nodinite.Serilog.Sink.Tests"|Name of [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
-|EndPointUri|"Nodinite.Serilog.Sink.Tests.Serilog"|URI for [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport |
+|EndPointName|"Nodinite.Serilog.ApiSink.Tests"|Name of [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
+|EndPointUri|"Nodinite.Serilog.Apisink.Tests.Serilog"|URI for [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport |
 |[EndPointDirection](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Getting%20started/Log%20Event/Endpoint%20Directions)|0|Direction for [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
 |[EndPointTypeId](https://documentation.nodinite.com/Documentation/CoreServices?doc=/Log%20API/Getting%20started/Log%20Event/Endpoint%20Types)|0|Type of [Endpoint](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Endpoints/Overview) transport|
 |OriginalMessageTypeName|"Serilog.LogEvent"|[Message Type Name](https://documentation.nodinite.com/Documentation/RepositoryModel?doc=/Message%20Types/Overview)|
@@ -55,7 +44,7 @@ Install-Package Nodinite.Serilog.Sink.Core
 
 Besides [Serilog](https://www.nuget.org/packages/serilog/), the following nuget packages need to be installed
 
-* [Nodinite.Serilog.Sink.Core](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core)
+* [Nodinite.Serilog.ApiSink](https://www.nuget.org/packages/Nodinite.Serilog.Apisink)
 
 Using the following code below you can start logging events to [**Nodinite**](https://nodinite.com).
 
@@ -66,11 +55,11 @@ var settings = new NodiniteLogEventSettings()
     LogAgentValueId = 503,
     EndPointDirection = 0,
     EndPointTypeId = 0,
-    EndPointUri = "Nodinite.Serilog.Sink.Tests.Serilog",
-    EndPointName = "Nodinite.Serilog.Sink.Tests",
+    EndPointUri = "Nodinite.Serilog.ApiSink.Tests.Serilog",
+    EndPointName = "Nodinite.Serilog.ApiSink.Tests",
     OriginalMessageTypeName = "Serilog.LogEvent",
     ProcessingUser = "NODINITE",
-    ProcessName = "Nodinite.Serilog.Sink.Tests",
+    ProcessName = "Nodinite.Serilog.ApiSink.Tests",
     ProcessingMachineName = "NODINITE-DEV",
     ProcessingModuleName = "DOTNETCORE.TESTS",
     ProcessingModuleType = "DOTNETCORE.TESTPROJECT"
@@ -87,7 +76,7 @@ Besides [Serilog](https://www.nuget.org/packages/serilog/), the following nuget 
 
 * [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/2.2.0-preview3-35497)
 * [Microsoft.Extensions.Configuration.Json](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/2.2.0-preview3-35497)
-* [Nodinite.Serilog.Sink.Core](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core)
+* [Nodinite.Serilog.ApiSink](https://www.nuget.org/packages/Nodinite.Serilog.ApiSink)
 * [Serilog.Settings.Configuration](https://www.nuget.org/packages/Serilog.Settings.Configuration/)
 
 Using the following code to initialize the logger in your application:
@@ -107,7 +96,7 @@ And putting the following into your appsettings.json:
 ```json
 {
   "Serilog": {
-    "Using": [ "Nodinite.Serilog.Sink.Core" ],
+    "Using": [ "Nodinite.Serilog.Apisink" ],
     "WriteTo": [
       {
         "Name": "NodiniteApiSink",
@@ -115,13 +104,13 @@ And putting the following into your appsettings.json:
           "NodiniteApiUrl": "",
           "Settings": {
             "LogAgentValueId": 503,
-            "EndPointName": "Nodinite.Serilog.Sink.Tests",
-            "EndPointUri": "Nodinite.Serilog.Sink.Tests.Serilog",
+            "EndPointName": "Nodinite.Serilog.ApiSink.Tests",
+            "EndPointUri": "Nodinite.Serilog.ApiSink.Tests.Serilog",
             "EndPointDirection": 0,
             "EndPointTypeId": 0,
             "OriginalMessageTypeName": "Serilog.LogEvent",
             "ProcessingUser": "NODINITE",
-            "ProcessName": "Nodinite.Serilog.Sink.Tests",
+            "ProcessName": "Nodinite.Serilog.ApiSink.Tests",
             "ProcessingMachineName": "NODINITE-DEV",
             "ProcessingModuleName": "DOTNETCORE.TESTS",
             "ProcessingModuleType": "DOTNETCORE.TESTPROJECT"
