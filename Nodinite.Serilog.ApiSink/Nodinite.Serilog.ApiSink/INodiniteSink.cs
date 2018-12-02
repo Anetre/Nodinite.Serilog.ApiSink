@@ -1,4 +1,4 @@
-﻿using Nodinite.Serilog.ApiSink.models;
+﻿using Nodinite.Serilog.Models;
 
 namespace Nodinite.Serilog.ApiSink
 {

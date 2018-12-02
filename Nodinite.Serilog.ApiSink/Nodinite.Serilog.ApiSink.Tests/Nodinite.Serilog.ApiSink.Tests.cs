@@ -3,7 +3,7 @@ using Serilog;
 using Serilog.Core;
 using System;
 using Nodinite.Serilog.ApiSink;
-using Nodinite.Serilog.ApiSink.models;
+using Nodinite.Serilog.Models;
 
 namespace Nodinite.Serilog.Sink.Tests
 {

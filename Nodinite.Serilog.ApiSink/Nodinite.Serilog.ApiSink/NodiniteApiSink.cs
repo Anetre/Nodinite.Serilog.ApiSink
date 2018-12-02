@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Nodinite.Serilog.ApiSink.models;
+using Nodinite.Serilog.Models;
 using Serilog.Core;
 using Serilog.Events;
 using System;
