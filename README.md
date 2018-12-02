@@ -1,6 +1,6 @@
 [![Nodinite Logo](https://www.nodinite.com/wp-content/uploads/2018/10/Nodinite_logo_payoff2line_w195.png)](https://nodinite.com)
 
-# Nodinite.Serilog.Sink.Core
+# Nodinite.Serilog.ApiSink
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a8r7xt17s7x0vxca?svg=true)](https://ci.appveyor.com/project/syron/nodinite-serilog-sink-core)
 [![NuGet Version](http://img.shields.io/nuget/v/Nodinite.Serilog.Sink.Core.svg?style=flat)](https://www.nuget.org/packages/Nodinite.Serilog.Sink.Core/)

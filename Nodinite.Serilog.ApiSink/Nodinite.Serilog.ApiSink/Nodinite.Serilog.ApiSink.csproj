@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageIconUrl>https://github.com/Nodinite/Nodinite.Serilog.ApiSink/blob/master/artifacts/nodinite-favicon-192x192.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/Nodinite/Nodinite.Serilog.ApiSink/blob/master/artifacts/nodinite-favicon-192x192.png?raw=true</PackageIconUrl>
     <PackageProjectUrl>https://github.com/Nodinite/Nodinite.Serilog.ApiSink</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Nodinite/Nodinite.Serilog.ApiSink</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/Nodinite/Nodinite.Serilog.ApiSink/blob/master/LICENSE</PackageLicenseUrl>
