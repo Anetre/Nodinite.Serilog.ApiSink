@@ -14,12 +14,14 @@ namespace Nodinite.Serilog.ApiSink
         private readonly IFormatProvider _formatProvider;
         private readonly string _apiUrl;
         private readonly NodiniteLogEventSettings _settings;
+        private readonly Guid _localInterchangeId;
 
         public NodiniteApiSink(string apiUrl, NodiniteLogEventSettings settings, IFormatProvider formatProvider)
         {
             _apiUrl = apiUrl;
             _settings = settings;
             _formatProvider = formatProvider;
+            _localInterchangeId = Guid.NewGuid();
 
             // validate settings
             if (!_settings.LogAgentValueId.HasValue)
@@ -37,6 +39,9 @@ namespace Nodinite.Serilog.ApiSink
 
         public void LogMessage(NodiniteLogEvent logEvent)
         {
+            logEvent.LocalInterchangeId = _localInterchangeId;
+            logEvent.ServiceInstanceActivityId = Guid.NewGuid();
+
             using (var client = new HttpClient())
             {
                 var uri = _apiUrl + "LogEvent/LogEvent";

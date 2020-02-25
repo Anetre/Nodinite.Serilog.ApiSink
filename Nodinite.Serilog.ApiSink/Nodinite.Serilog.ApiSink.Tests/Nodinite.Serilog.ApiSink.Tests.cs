@@ -4,6 +4,7 @@ using Serilog.Core;
 using System;
 using Nodinite.Serilog.ApiSink;
 using Nodinite.Serilog.Models;
+using Newtonsoft.Json;
 
 namespace Nodinite.Serilog.Sink.Tests
 {
@@ -72,9 +73,20 @@ namespace Nodinite.Serilog.Sink.Tests
                 .WriteTo.NodiniteApiSink(nodiniteApiUrl, settings)
                 .CreateLogger()
                 .ForContext("CorrelationId", Guid.NewGuid())
-                .ForContext("CustomerId", 12);
+                .ForContext("CustomerId", 12)
+                .ForContext("Body", JsonConvert.SerializeObject(new ExampleBody() { Id = 1, Name = "Test" }))
+                .ForContext("EventNumber", 123)
+                .ForContext("SequenceNo", 111)
+                .ForContext("OriginalMessageType", "MyCustomMessageType")
+                .ForContext("ApplicationInterchangeId", "MyCorrelationId");
 
             log.Information($"Customer '12' imported");
         }
+    }
+
+    public class ExampleBody
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
